@@ -52,11 +52,12 @@
                     </div>
                     <div class="form-group">
                         <asp:Label ID="LastNameLabel" runat="server" Text="Last Name"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" runat="server" required="true" CausesValidation="True"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <asp:Label ID="AgeLabel" runat="server" Text="Age"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" runat="server" required="true" CausesValidation="True"></asp:TextBox>
+                        <asp:RangeValidator ID="AgeRangeValidator" runat="server" ErrorMessage="Please enter a value in between 1-103" ControlToValidate="AgeTextBox" ForeColor="Red" MaximumValue="103" MinimumValue="1" Type="Integer"></asp:RangeValidator>
                     </div>
                     <asp:Button CssClass="btn btn-primary" ID="Button" runat="server" Text="Submit" OnClick="Button_Click" />
                     <div class="form-group">
